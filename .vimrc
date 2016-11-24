@@ -1,7 +1,7 @@
 if &compatible
   set nocompatible               " Be iMproved
 endif
-set runtimepath+=/home/greg2/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=/home/greg2/Shougo/dein.vim
 call dein#begin('./dein')
 
 " Let dein manage dein
