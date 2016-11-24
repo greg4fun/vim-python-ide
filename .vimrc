@@ -1,8 +1,8 @@
 if &compatible
   set nocompatible               " Be iMproved
 endif
-set runtimepath+=/home/greg2/Shougo/dein.vim
-call dein#begin('./dein')
+set runtimepath+=/home/greg/Shougo/dein.vim
+call dein#begin('/home/greg/dein')
 
 " Let dein manage dein
 " Required:
@@ -35,6 +35,7 @@ call dein#add('scrooloose/nerdtree')
 call dein#add('xolox/vim-misc')
 call dein#add('xolox/vim-notes')
 call dein#add('rafi/awesome-vim-colorschemes')
+call dein#add('flazz/vim-colorschemes')
 call dein#add('bogado/file-line')
 call dein#add('rafi/vim-tagabana')
 call dein#add('MattesGroeger/vim-bookmarks')
