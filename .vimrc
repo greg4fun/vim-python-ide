@@ -1,12 +1,12 @@
 if &compatible
   set nocompatible               " Be iMproved
 endif
-set runtimepath+=/home/greg/Shougo/dein.vim
-call dein#begin('/home/greg/dein')
+set runtimepath+=/home/greg2/dein.vim
+call dein#begin('/home/greg2/')
 
 " Let dein manage dein
 " Required:
-call dein#add('Shougo/dein.vim')
+call dein#add('dein.vim')
 
 " Add or remove your plugins here:
 call dein#add('Shougo/vimproc', {'build':'make'}) " Interactive command execution in Vim.
