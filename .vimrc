@@ -225,6 +225,10 @@ syntax enable
 " NeoBundle 'Lokaltog/vim-powerline'
 "NeoBundle 'vim-scripts/vim-signify' " Advanced plugin for showing VCS diffs
 " NeoBundle 'onjin/pycomplexity.vim'
+"
+" let $VARPATH=expand('$XDG_CACHE_HOME/vim')
+let $VARPATH=expand('.cache/vim')
+
 set undofile swapfile nobackup
 set directory=$VARPATH/swap//,$VARPATH,~/tmp,/var/tmp,/tmp
 set undodir=$VARPATH/undo//,$VARPATH,~/tmp,/var/tmp,/tmp
