@@ -1,8 +1,8 @@
 if &compatible
   set nocompatible               " Be iMproved
 endif
-set runtimepath+=/home/greg2/dein.vim
-call dein#begin('/home/greg2/')
+set runtimepath+=/home/greg2/.vim/dein.vim
+call dein#begin('/home/greg2/.vim')
 
 " Let dein manage dein
 " Required:
