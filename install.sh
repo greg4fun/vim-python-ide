@@ -1,5 +1,5 @@
 if [ ! -d "$(eval echo ~$USER)/.vim" ]; then
-    sudo mkdir $(eval echo ~$USER)/.vim
+    mkdir $(eval echo ~$USER)/.vim
 fi
 mkdir -p "$(eval echo ~$USER)/.vim/cache/"{backup,session,swap,tags,undo,view,notes};
 git clone https://github.com/Shougo/dein.vim.git $(eval echo ~$USER)/.vim/dein.vim
