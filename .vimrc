@@ -351,8 +351,8 @@ let g:vimclojure#ParenRainbow=1           " Rainbow parentheses'!
 " let g:UltiSnipsListSnippets="<c-s-tab>"
 
 " NeoBundle 'davidhalter/jedi-vim'
-" let g:jedi#auto_initialization = 1
-" let g:jedi#goto_command = "<leader>g"
+let g:jedi#auto_initialization = 1
+let g:jedi#goto_command = "<leader>g"
 " let g:jedi#get_definition_command = "<leader>d"
 " let g:jedi#use_tabs_not_buffers = 0
 " let g:jedi#popup_on_dot = 0
@@ -361,22 +361,22 @@ let g:vimclojure#ParenRainbow=1           " Rainbow parentheses'!
 " let g:jedi#show_function_definition = "0"
 
  " let g:jedi#force_py_version = 3
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#smart_auto_mappings = 0
-let g:jedi#use_tag_stack = 0
-let g:jedi#popup_select_first = 1
-let g:jedi#use_splits_not_buffers = 'right'
-let g:jedi#completions_command = ''
-let g:jedi#goto_command = '<leader>d'
-let g:jedi#goto_assignments_command = '<leader>a'
-let g:jedi#documentation_command = 'K'
-let g:jedi#rename_command = '<leader>r'
-let g:jedi#usages_command = '<leader>n'
-let g:jedi#popup_on_dot = 0
-let g:jedi#max_doc_height = 40
-let g:jedi#show_call_signatures = 0
-let g:jedi#show_call_signatures_delay = 1000
+" let g:jedi#completions_enabled = 1
+" let g:jedi#auto_vim_configuration = 1
+" let g:jedi#smart_auto_mappings = 1
+" let g:jedi#use_tag_stack = 0
+" let g:jedi#popup_select_first = 1
+" let g:jedi#use_splits_not_buffers = 'right'
+" let g:jedi#completions_command = ''
+" let g:jedi#goto_command = '<leader>d'
+" let g:jedi#goto_assignments_command = '<leader>a'
+" let g:jedi#documentation_command = 'K'
+" let g:jedi#rename_command = '<leader>r'
+" let g:jedi#usages_command = '<leader>n'
+" let g:jedi#popup_on_dot = 0
+" let g:jedi#max_doc_height = 40
+" let g:jedi#show_call_signatures = 0
+" let g:jedi#show_call_signatures_delay = 1000
 
 filetype plugin indent on     " required!
 set nocompatible
