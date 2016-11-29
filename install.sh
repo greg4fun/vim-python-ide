@@ -6,3 +6,5 @@ git clone https://github.com/Shougo/dein.vim.git $(eval echo ~$USER)/.vim/dein.v
 git clone https://grzegorz_stencel@bitbucket.org/grzegorz_stencel/vim-python-ide.git $(eval echo ~$USER)/.vim/cache/vim-python-ide
 cp $(eval echo ~$USER)/.vim/cache/vim-python-ide/.vimrc $(eval echo ~$USER)
 vim -c "call dein#install()"
+git clone https://github.com/powerline/fonts.git
+cd fonts && install.sh

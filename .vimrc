@@ -35,14 +35,16 @@ call dein#add('scrooloose/nerdtree')
 call dein#add('xolox/vim-misc')
 call dein#add('xolox/vim-notes')
 call dein#add('rafi/awesome-vim-colorschemes')
+" call dein#add('rafi/awesome-vim-colorschemes/base16')
 call dein#add('flazz/vim-colorschemes')
 call dein#add('bogado/file-line')
+call dein#add('jmcantrell/vim-virtualenv')
 call dein#add('rafi/vim-tagabana')
 call dein#add('MattesGroeger/vim-bookmarks')
 call dein#add('vim-scripts/Tagbar')
 call dein#add('thinca/vim-localrc')
 call dein#add('bling/vim-airline')
-
+call dein#add('vim-airline/vim-airline-themes')
 " Lazy:
 call dein#add('othree/html5.vim', {'on_ft': 'html'})
 call dein#add('rcmdnk/vim-markdown', {'on_ft': 'markdown'})
@@ -171,8 +173,8 @@ call dein#add( 'AndrewRadev/sideways.vim', {'on_map': [['ox', '<Plug>']]})
 call dein#add( 'bkad/CamelCaseMotion', {
 	\ 'on_map': ['<Plug>CamelCaseMotion_w', '<Plug>CamelCaseMotion_b']
 	\ })
-" call dein#add('tpope/vim-fugitive')
-" call dein#add('scrooloose/syntastic')
+call dein#add('tpope/vim-fugitive')
+call dein#add('scrooloose/syntastic')
 " call dein#add('michaeljsmith/vim-indent-object')
 " call dein#add('bling/vim-airline')
 " call dein#add('sjl/gundo.vim')
@@ -226,22 +228,7 @@ syntax enable
 " NeoBundle 'onjin/pycomplexity.vim'
 "
 " let $VARPATH=expand('$XDG_CACHE_HOME/vim')
-let $VARPATH=expand('/home/greg/.vim/cache')
 
-set undofile swapfile nobackup
-set directory=$VARPATH/swap//,$VARPATH,~/tmp,/var/tmp,/tmp
-set undodir=$VARPATH/undo//,$VARPATH,~/tmp,/var/tmp,/tmp
-set backupdir=$VARPATH/backup/,$VARPATH,~/tmp,/var/tmp,/tmp
-set viewdir=$VARPATH/view/
-set nospell spellfile=$VIMPATH/spell/en.utf-8.add
-if has('persistent_undo')
-	augroup undoskip
-		autocmd!
-		silent! autocmd BufWritePre
-			\ /tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*,.vault.vim
-			\ setlocal noundofile
-	augroup END
-endif
 
 " theme
 
@@ -261,7 +248,7 @@ if ! has("gui_running")
 else
     " disable menu/ect
     set guioptions=aci
-    colorscheme solarized
+    colorscheme wombat
     set background=dark
     " Cursor preferences
     set guifont=Anonymous\ Pro\ 8
@@ -291,26 +278,63 @@ filetype off                   " required!
 " airline
 """"""""""""""""""""""""""""""
 set laststatus=2 " Always show status line
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#hunks#enabled=0
 let g:airline_theme             = 'powerlineish'
 let g:airline_enable_branch     = 1
 let g:airline_enable_syntastic  = 1
 let g:airline#extensions#tabline#enabled = 1
 
 " vim-powerline symbols
-let g:airline_left_sep          = '⮀'
-let g:airline_left_alt_sep      = '⮁'
-let g:airline_right_sep         = '⮂'
-let g:airline_right_alt_sep     = '⮃'
-let g:airline_branch_prefix     = '⭠'
-let g:airline_readonly_symbol   = '⭤'
-let g:airline_linecolumn_prefix = '⭡'
+" let g:airline_left_sep          = '⮀'
+" let g:airline_left_alt_sep      = '⮁'
+" let g:airline_right_sep         = '⮂'
+" let g:airline_right_alt_sep     = '⮃'
+" let g:airline_branch_prefix     = '⭠'
+" let g:airline_readonly_symbol   = '⭤'
+" let g:airline_linecolumn_prefix = '⭡'
+if !exists(‘g:airlinesymbols’)
+    let g:airlinesymbols = {}
+endif
 " }} airline
-
+" air-line
+" let g:airline_powerline_fonts = 1
+"
+" if !exists(''
 " NeoBundle 'scrooloose/nerdtree'
 " {{
 let NERDTreeMinimalUI = 1
 " }}
+" air-line
+" let g:airline_powerline_fonts = 1
 
+" if !exists('g:airline_symbols')
+"    let g:airline_symbols = {}
+" endif
+
+" unicode symbols
+" let g:airline_left_sep = '»'
+"let g:airline_left_sep = '▶'
+"let g:airline_right_sep = '«'
+"let g:airline_right_sep = '◀'
+" let g:airline_symbols.linenr = '␊'
+" let g:airline_symbols.linenr = '␤'
+" let g:airline_symbols.linenr = '¶'
+" let g:airline_symbols.branch = '⎇'
+" let g:airline_symbols.paste = 'ρ'
+" let g:airline_symbols.paste = 'Þ'
+" let g:airline_symbols.paste = '∥'
+" let g:airline_symbols.whitespace = 'Ξ'
+
+" airline symbols
+" let g:airline_left_sep = ''
+" let g:airline_left_alt_sep = ''
+" let g:airline_right_sep = ''
+" let g:airline_right_alt_sep = ''
+" let g:airline_symbols.branch = ''
+" let g:airline_symbols.readonly = ''
+" let g:airline_symbols.linenr = ''
 
 " UNITE
 let g:unite_source_history_yank_enable = 1
@@ -378,11 +402,11 @@ set ruler                           " show the cursor position all the time
 if has("balloon_eval") && has("unix")
   set ballooneval
 endif
-if exists(" &breakindent")
-  set breakindent showbreak=+++
-elseif has("gui_running")
-  set showbreak=+++
-endif
+" if exists(" &breakindent")
+" "  set breakindent showbreak=+++
+" elseif has("gui_running")
+" "  set showbreak=+++
+" endif
 set cmdheight=1                     " command line height
 set complete-=i                     " Searching includes can be slow
 set display=lastline                "
@@ -442,11 +466,11 @@ set listchars=tab:>\ ,trail:~
 " ---------------
 " folding
 " --------------- {{
-"set foldenable                                   " Turn on folding
-"set foldmethod=syntax                            " Fold on the marker
-"set foldlevel=100                                " Don't autofold anything (but I can still fold manually)
-"set foldlevelstart=99                            " Remove folds
-"set foldopen=block,hor,mark,percent,quickfix,tag " what movements open fold
+" set foldenable                                   " Turn on folding
+" set foldmethod=syntax                            " Fold on the marker
+" set foldlevel=100                                " Don't autofold anything (but I can still fold manually)
+" set foldlevelstart=99                            " Remove folds
+" set foldopen=block,hor,mark,percent,quickfix,tag " what movements open fold
 
 " ---------------
 " mouse
@@ -595,12 +619,12 @@ endif
 nnoremap <C-s> :VimShellPop<cr>
 
 " Unite
-nnoremap <C-p> :<C-u>Unite -buffer-name=files -start-insert file_rec/async<cr>
-nnoremap <space>p :<C-u>Unite -no-split -buffer-name=files -start-insert file_rec/async<cr>
-nnoremap <space>l :<C-u>Unite -buffer-name=files -start-insert file_mru<cr>
-nnoremap <space>/ :Unite grep:.<cr>
-nnoremap <space>y :Unite history/yank<cr>
-nnoremap <space>s :Unite -quick-match buffer<cr>
+" nnoremap <C-p> :<C-u>Unite -buffer-name=files -start-insert file_rec/async<cr>
+" nnoremap <space>p :<C-u>Unite -no-split -buffer-name=files -start-insert file_rec/async<cr>
+" nnoremap <space>l :<C-u>Unite -buffer-name=files -start-insert file_mru<cr>
+" nnoremap <space>/ :Unite grep:.<cr>
+" nnoremap <space>y :Unite history/yank<cr>
+" nnoremap <space>s :Unite -quick-match buffer<cr>
 
 
 " Bundle 'scrooloose/nerdtree'
@@ -610,9 +634,10 @@ nmap <C-o> :NERDTreeToggle<CR>
 "GUI SETTINGS
 nmap <Leader>ll :set background=light<CR>
 nmap <Leader>kk :set background=dark<CR>
-nmap <Leader>jj :colorscheme solarized<CR>
-nmap <Leader>hh :colorscheme blackboard<CR>
-
+nmap <Leader>1 :colorscheme solarized<CR>
+nmap <Leader>2 :colorscheme blackboard<CR>
+nmap <Leader>3 :colorscheme wombat<CR>
+nmap <Leader>4 :colorscheme molokai<CR>
     
 nmap <Leader>sit :NERDTreeFind
 " " }}
@@ -741,12 +766,84 @@ set tags=/opt/iwapps/test/tags
 "done
 " let @d = 'i<80>kD<80>kD<80>kD<80>kDDONE^[<80>kl<80>kl<80>kl'
 set nofoldenable
-NeoBundleCheck
+
+
+
 " Persistent undo
-set undofile
-set undodir=$HOME/.vim/undo
+" set undofile
+" set undodir=$HOME/.vim/undo
 
-set undolevels=2000
-set undoreload=20000
+" set undolevels=2000
+" set undoreload=20000
 exec "set tags=" .
+let $VARPATH=expand('/home/greg/.vim/cache')
+set undofile swapfile nobackup
+set directory=$VARPATH/swap//,$VARPATH,~/tmp,/var/tmp,/tmp
+set undodir=$VARPATH/undo//,$VARPATH,~/tmp,/var/tmp,/tmp
+set backupdir=$VARPATH/backup/,$VARPATH,~/tmp,/var/tmp,/tmp
+set viewdir=$VARPATH/view/
+set nospell spellfile=$VIMPATH/spell/en.utf-8.add
+if has('persistent_undo')
+	augroup undoskip
+		autocmd!
+		silent! autocmd BufWritePre
+			\ /tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*,.vault.vim
+			\ setlocal noundofile
+	augroup END
+endif
 
+
+set magic                    " For regular expressions turn magic on
+set path=.,**                " Directories to search when using gf
+set virtualedit=block        " Position cursor anywhere in visual block
+set history=500              " Search and commands remembered
+set synmaxcol=1000           " Don't syntax highlight long lines
+" set mouse=nvi                " Disable mouse in command-line mode
+"" What to save for views:
+set viewoptions-=options viewoptions+=slash,unix
+
+" What not to save in sessions:
+set sessionoptions-=options
+set sessionoptions-=globals
+set sessionoptions-=folds
+set sessionoptions-=help
+set sessionoptions-=buffers
+set wildmenu
+set wildmode=longest:full,full
+" Searching {{{
+" ---------
+set ignorecase      " Search ignoring case
+set smartcase       " Keep case when searching with *
+set infercase
+set incsearch       " Incremental search
+set hlsearch        " Highlight search results
+set wrapscan        " Searches wrap around the end of the file
+set showmatch       " Jump to matching bracket
+set matchpairs+=<:> " Add HTML brackets to pair matching
+set matchtime=1     " Tenths of a second to show the matching paren
+set cpoptions-=m    " showmatch will wait 0.5s or until a char is typed
+
+
+set number              " Show line numbers
+set relativenumber      " Use relative instead of absolute line numbers
+
+set noruler             " Disable default status ruler
+set list                " Show hidden characters
+
+set showtabline=2       " Always show the tabs line
+set tabpagemax=30       " Maximum number of tab pages
+set winwidth=30         " Minimum width for current window
+set winheight=1         " Minimum height for current window
+set previewheight=8     " Completion preview height
+set helpheight=12       " Minimum help window height
+
+set display=lastline
+set notitle             " No need for a title
+set noshowcmd           " Don't show command in status line
+set cmdheight=2         " Height of the command line
+set cmdwinheight=5      " Command-line lines
+set noequalalways       " Don't resize windows on split or close
+set laststatus=2        " Always show a status line
+set colorcolumn=80      " Highlight the 80th character limit
+
+nmap <leader>/ :vsplit<CR>
