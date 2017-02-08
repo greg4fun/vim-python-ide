@@ -6,7 +6,7 @@ call dein#begin('/home/greg/.vim')
 
 " Let dein manage dein
 " Required:
-call dein#add('dein.vim')
+" call dein#add('dein.vim')
 
 " Add or remove your plugins here:
 call dein#add('Shougo/vimproc', {'build':'make'}) " Interactive command execution in Vim.
@@ -20,7 +20,7 @@ call dein#add('Shougo/vimproc', {'build':'make'}) " Interactive command executio
 "    \    },
 "    \ })
 
-" call dein#add('Shougo/unite.vim')
+call dein#add('Shougo/unite.vim')
 
 call dein#add('Shougo/neosnippet.vim') " neo-snippet plugin contains neocomplcache snippets source
 call dein#add('Shougo/neosnippet-snippets')
@@ -113,22 +113,6 @@ call dein#add( 'Konfekt/FastFold', {'on_path': '.*'})
 call dein#add( 'kana/vim-niceblock', {'on_map': '<Plug>'})
 call dein#add('Yggdroot/indentLine')
 call dein#add('t9md/vim-choosewin')
-call dein#add( 'Shougo/deoplete.nvim', {
-	\ 'depends': 'Shougo/context_filetype.vim',
-	\ 'disabled': ! has('nvim'),
-	\ 'on_i': 1
-	\ })
-call dein#add( 'Shougo/neocomplete', {
-	\ 'depends': 'Shougo/context_filetype.vim',
-	\ 'disabled': ! has('lua') || has('nvim'),
-	\ 'vim_version': '7.3.885',
-	\ 'on_i': 1
-	\ })
-call dein#add( 'Shougo/neosnippet.vim', {
-	\ 'depends': ['Shougo/neosnippet-snippets', 'Shougo/context_filetype.vim'],
-	\ 'on_i': 1,
-	\ 'on_ft': 'snippet',
-	\ 'on_unite': ['neosnippet', 'neosnippet/user', 'neosnippet/runtime']})
 call dein#add( 'Raimondi/delimitMate', {'on_i': 1})
 call dein#add( 'Shougo/echodoc.vim', {'on_i': 1})
 call dein#add( 'Shougo/neco-vim', {'on_ft': 'vim', 'on_i': 1})
@@ -336,6 +320,9 @@ let NERDTreeMinimalUI = 1
 " let g:airline_symbols.readonly = ''
 " let g:airline_symbols.linenr = ''
 
+let g:pymode_breakpoint = 1
+
+let g:pymode_breakpoint_bind = '<leader>b'
 " UNITE
 let g:unite_source_history_yank_enable = 1
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
@@ -387,9 +374,9 @@ set backspace=indent,eol,start " allow backspacing over everything in insert mod
 let g:notes_directories = ['~/Dropbox/Ubuntu/Notes', '~/Dropbox/Ubuntu/Shared.Notes']
 
 "PYTHON MODE
-let g:pymode_lint_onfly = 0
-let g:pymode_lint_write = 1
-let g:pymode_utils_whitespaces = 0
+" let g:pymode_lint_onfly = 0
+" let g:pymode_lint_write = 1
+" let g:pymode_utils_whitespaces = 0
 
 
 nnoremap <silent> <F8> :Unite neobundle/update -log -wrap -auto-quit<CR>
@@ -753,6 +740,17 @@ endif
 " nmap <C-P> :NERDTreeToggle<CR>
 " nmap <Leader>sit :NERDTreeFind<CR>
 " }} Mapping
+"
+
+" Unite
+nnoremap <C-p> :<C-u>Unite -buffer-name=files -start-insert file_rec/async<cr>
+nnoremap <space>p :<C-u>Unite -no-split -buffer-name=files -start-insert file_rec/async<cr>
+nnoremap <space>l :<C-u>Unite -buffer-name=files -start-insert file_mru<cr>
+nnoremap <space>/ :Unite grep:.<cr>
+nnoremap <space>y :Unite history/yank<cr>
+nnoremap <space>s :Unite -quick-match buffer<cr>
+"
+"
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
