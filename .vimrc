@@ -184,8 +184,8 @@ call dein#add('scrooloose/syntastic')
 " call dein#add('xolox/vim-notes')
 " call dein#add('xolox/vim-misc')
 " call dein#add('python.vim--Vasiliev')
-call dein#add('blackboard.vim')
-" call dein#add('klen/python-mode')
+" call dein#add('blackboard.vim')
+call dein#add('klen/python-mode')
 " call dein#add('garybernhardt/pycomplexity')
 " call dein#add('derekwyatt/vim-scala')
 " call dein#add('plasticboy/vim-markdown')
@@ -278,9 +278,9 @@ let g:airline#extensions#tabline#enabled = 1
 " let g:airline_branch_prefix     = '⭠'
 " let g:airline_readonly_symbol   = '⭤'
 " let g:airline_linecolumn_prefix = '⭡'
-if !exists(‘g:airlinesymbols’)
-    let g:airlinesymbols = {}
-endif
+" if !exists(‘g:airlinesymbols’)
+"    let g:airlinesymbols = {}
+" endif
 " }} airline
 " air-line
 " let g:airline_powerline_fonts = 1
@@ -325,7 +325,7 @@ let g:pymode_breakpoint = 1
 let g:pymode_breakpoint_bind = '<leader>b'
 " UNITE
 let g:unite_source_history_yank_enable = 1
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
+" call unite#filters#matcher_default#use(['matcher_fuzzy'])
 " SUPERTAB
 let g:SuperTabDefaultCompletionType = "context"
 " Settings for VimClojure
@@ -756,9 +756,8 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 
 " search recursively upwards for the tags
-#set tags=tags;/
-
-set tags=/opt/iwapps/test/tags
+set tags=tags;/
+" set tags=/opt/iwapps/test/tags
 " comment out
 " let @c = 'i#<80>kd<80>kl^['
 "done
@@ -773,7 +772,7 @@ set nofoldenable
 
 " set undolevels=2000
 " set undoreload=20000
-exec "set tags=" .
+" exec "set tags=" .
 let $VARPATH=expand('/home/greg/.vim/cache')
 set undofile swapfile nobackup
 set directory=$VARPATH/swap//,$VARPATH,~/tmp,/var/tmp,/tmp
