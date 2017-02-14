@@ -9,8 +9,7 @@ set encoding=utf-8
 call dein#add('dein.vim')
 
 " Add or remove your plugins here:
-call dein#add('Shougo/vimproc', {'build':'make'}) " Interactive command execution in Vim.
-
+call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 call dein#add( 'Shougo/vimproc')
 call dein#add( 'scrooloose/syntastic')
 call dein#add( 'michaeljsmith/vim-indent-object')
