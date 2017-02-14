@@ -14,7 +14,6 @@ call dein#add('Shougo/vimproc', {'build':'make'}) " Interactive command executio
 call dein#add( 'Shougo/vimproc')
 call dein#add( 'scrooloose/syntastic')
 call dein#add( 'michaeljsmith/vim-indent-object')
-call dein#add( 'bling/vim-airline')
 call dein#add( 'sjl/gundo.vim')
 call dein#add( 'scrooloose/nerdtree')
 call dein#add( 'Shougo/vimshell')
@@ -46,6 +45,10 @@ call dein#add( 'sotte/presenting.vim' )
 call dein#add( 'garybernhardt/pycomplexity', {'rtp': 'pycomplexity.vim/'})
 call dein#add( 'derekwyatt/vim-scala')
 call dein#add( 'plasticboy/vim-markdown' )
+call dein#add('rafi/awesome-vim-colorschemes')
+call dein#add('flazz/vim-colorschemes')
+call dein#add('bling/vim-airline')
+call dein#add('vim-airline/vim-airline-themes')
 
 
 
@@ -70,20 +73,35 @@ let g:syntastic_quiet_messages = {'level': 'warnings'}
 let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_flake8_args='--ignore=E128,E501,E127'
 set laststatus=2 " Always show status line
+
+" Airline old
 " let g:airline_theme             = 'powerlineish'
+" let g:airline_enable_branch     = 1
+" let g:airline_enable_syntastic  = 1
+" let g:airline#extensions#tabline#enabled = 1
+" vim-powerline symbols
+" let g:airline_left_sep          = '⮀'
+" let g:airline_left_alt_sep      = '⮁'
+" let g:airline_right_sep         = '⮂'
+" let g:airline_right_alt_sep     = '⮃'
+" let g:airline_branch_prefix     = '⭠'
+" let g:airline_readonly_symbol   = '⭤'
+" let g:airline_linecolumn_prefix = '⭡'
+" }} airline
+
+""""""""""""""""""""""""""""""
+" airline new
+""""""""""""""""""""""""""""""
+set laststatus=2 " Always show status line
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#hunks#enabled=0
+let g:airline_theme             = 'powerlineish'
 let g:airline_enable_branch     = 1
 let g:airline_enable_syntastic  = 1
 let g:airline#extensions#tabline#enabled = 1
-
-" vim-powerline symbols
-let g:airline_left_sep          = '⮀'
-let g:airline_left_alt_sep      = '⮁'
-let g:airline_right_sep         = '⮂'
-let g:airline_right_alt_sep     = '⮃'
-let g:airline_branch_prefix     = '⭠'
-let g:airline_readonly_symbol   = '⭤'
-let g:airline_linecolumn_prefix = '⭡'
-" }} airline
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 
 
 
@@ -145,7 +163,7 @@ set backspace=indent,eol,start " allow backspacing over everything in insert mod
 let g:pymode_lint_onfly = 0
 let g:pymode_lint_write = 1
 let g:pymode_utils_whitespaces = 0
-nnoremap <silent> <F8> :Unite neobundle/update -log -wrap -auto-quit<CR>
+" nnoremap <silent> <F8> :Unite neobundle/update -log -wrap -auto-quit<CR>
 " python.vim-vasiliev options
 let python_highlight_space_errors=1
 let python_highlight_all=1
@@ -538,3 +556,12 @@ set undodir=$HOME/.vim/undo
 set undolevels=2000
 set undoreload=20000
 set tags=tags
+
+
+" TEST
+" ---------------
+set showbreak=↪
+set fillchars=vert:│,fold:─
+set listchars=tab:\⋮\ ,extends:⟫,precedes:⟪,nbsp:.,trail:·
+
+

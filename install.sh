@@ -8,3 +8,7 @@ cp $(eval echo ~$USER)/.vim/cache/vim-python-ide/.vimrc $(eval echo ~$USER)
 vim -c "call dein#install()"
 git clone https://github.com/powerline/fonts.git
 cd fonts && install.sh
+wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+mv PowerlineSymbols.otf ~/.fonts/
+fc-cache -vf ~/.fonts/
