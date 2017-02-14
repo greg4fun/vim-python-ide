@@ -35,7 +35,7 @@ call dein#add( 'Conque-Shell')
 call dein#add( 'davidhalter/jedi-vim')
 call dein#add( 'nathanaelkane/vim-indent-guides')
 call dein#add( 'mhinz/vim-startify')
-call dein#add( 'dbsr/vimpy')
+" call dein#add( 'dbsr/vimpy')
 call dein#add( 'ervandew/supertab')
 call dein#add( 'xolox/vim-notes')
 call dein#add( 'xolox/vim-misc')
@@ -65,11 +65,12 @@ let g:syntastic_auto_loc_list=2
 let g:syntastic_enable_balloons = 1
 let g:syntastic_auto_jump=0
 let g:syntastic_loc_list_height=6
-let g:syntastic_quiet_warnings=0
+" let g:syntastic_quiet_warnings=0
+let g:syntastic_quiet_messages = {'level': 'warnings'}
 let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_flake8_args='--ignore=E128,E501,E127'
 set laststatus=2 " Always show status line
-let g:airline_theme             = 'powerlineish'
+" let g:airline_theme             = 'powerlineish'
 let g:airline_enable_branch     = 1
 let g:airline_enable_syntastic  = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -127,12 +128,13 @@ let g:UltiSnipsExpandTrigger="<c-tab>"
 let g:UltiSnipsListSnippets="<c-s-tab>"
 let g:jedi#auto_initialization = 1
 let g:jedi#goto_command = "<leader>g"
-let g:jedi#get_definition_command = "<leader>d"
+let g:jedi#goto_definitions_command ="<leader>d"
 let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#popup_on_dot = 0
 let g:jedi#rename_command = "<leader>r"
-let g:jedi#related_names_command = "<leader>n"
-let g:jedi#show_function_definition = "0"
+let g:jedi#usages_command = "<leader>n"
+let g:jedi#show_call_signatures = "1"
+
 let g:vimpy_prompt_resolve = 1
 filetype plugin indent on     " required!
 set nocompatible
@@ -529,7 +531,6 @@ endif
 "done
 " let @d = 'i<80>kD<80>kD<80>kD<80>kDDONE^[<80>kl<80>kl<80>kl'
 set nofoldenable
-NeoBundleCheck
 " Persistent undo
 set undofile
 set undodir=$HOME/.vim/undo
