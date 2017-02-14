@@ -31,7 +31,7 @@ call dein#add('Shougo/vimproc', {'build':'make'}) " Interactive command executio
 " call dein#add('xolox/vim-session')
 " call dein#add('christoomey/vim-tmux-navigator')
 " call dein#add('mhinz/vim-startify')
-" call dein#add('scrooloose/nerdtree')
+call dein#add('scrooloose/nerdtree')
 " call dein#add('xolox/vim-misc')
 " call dein#add('xolox/vim-notes')
 " call dein#add('rafi/awesome-vim-colorschemes')
@@ -58,7 +58,7 @@ call dein#add('Shougo/vimproc', {'build':'make'}) " Interactive command executio
 " call dein#add('jelera/vim-javascript-syntax', {'on_ft': 'javascript'})
 " call dein#add('jiangmiao/simple-javascript-indenter',  {'on_ft': 'javascript'})
 " " call dein#add('sotte/presenting.vim'{'on_ft': ['markdown', ],'on_cmd': ['PresentingStart', ]})
-" call dein#add('davidhalter/jedi-vim', {'on_ft': 'python'})
+call dein#add('davidhalter/jedi-vim', {'on_ft': 'python'})
 " 
 " call dein#add('Shougo/vimfiler.vim', {
 " "    \'depends': 'Shougo/unite.vim',
@@ -173,38 +173,38 @@ call dein#add('Shougo/vimproc', {'build':'make'}) " Interactive command executio
 " call dein#add( 'bkad/CamelCaseMotion', {
 " "	\ 'on_map': ['<Plug>CamelCaseMotion_w', '<Plug>CamelCaseMotion_b']
 " "	\ })
-" call dein#add('tpope/vim-fugitive')
-" call dein#add('scrooloose/syntastic')
-" " call dein#add('michaeljsmith/vim-indent-object')
-" " call dein#add('bling/vim-airline')
-" " call dein#add('sjl/gundo.vim')
-" " call dein#add('Shougo/vimshell')
-" " call dein#add('Shougo/neocomplcache')
-" " call dein#add('Shougo/neosnippet')
-" " call dein#add('Shougo/unite.vim')
-" " call dein#add('Shougo/vimproc'{'build' : 'make'})
-" " call dein#add('Shougo/unite-outline')
-" " call dein#add('altercation/vim-colors-solarized')
-" " call dein#add('vcscommand.vim')
-" call dein#add('Tagbar')
-" call dein#add('bcnice20/go-vim')
-" call dein#add('kchmck/vim-coffee-script')
-" call dein#add('VimClojure')
-" call dein#add('jpalardy/vim-slime')
-" call dein#add('UltiSnips')
-" call dein#add('Conque-Shell')
-" call dein#add('nathanaelkane/vim-indent-guides')
-" call dein#add('mhinz/vim-startify')
-" call dein#add('dbsr/vimpy')
-" call dein#add('ervandew/supertab')
-" call dein#add('xolox/vim-notes')
-" call dein#add('xolox/vim-misc')
-" call dein#add('python.vim--Vasiliev')
+call dein#add('tpope/vim-fugitive')
+call dein#add('scrooloose/syntastic')
+call dein#add('michaeljsmith/vim-indent-object')
+call dein#add('bling/vim-airline')
+call dein#add('sjl/gundo.vim')
+call dein#add('Shougo/vimshell')
+call dein#add('Shougo/neocomplcache')
+call dein#add('Shougo/neosnippet')
+call dein#add('Shougo/unite.vim')
+call dein#add('Shougo/vimproc'{'build' : 'make'})
+call dein#add('Shougo/unite-outline')
+call dein#add('altercation/vim-colors-solarized')
+call dein#add('vcscommand.vim')
+call dein#add('Tagbar')
+call dein#add('bcnice20/go-vim')
+call dein#add('kchmck/vim-coffee-script')
+call dein#add('VimClojure')
+call dein#add('jpalardy/vim-slime')
+call dein#add('UltiSnips')
+call dein#add('Conque-Shell')
+call dein#add('nathanaelkane/vim-indent-guides')
+call dein#add('mhinz/vim-startify')
+call dein#add('dbsr/vimpy')
+call dein#add('ervandew/supertab')
+call dein#add('xolox/vim-notes')
+call dein#add('xolox/vim-misc')
+call dein#add('python.vim--Vasiliev')
 call dein#add('blackboard.vim')
-" call dein#add('klen/python-mode')
+call dein#add('klen/python-mode')
 " call dein#add('garybernhardt/pycomplexity')
 " call dein#add('derekwyatt/vim-scala')
-" call dein#add('plasticboy/vim-markdown')
+call dein#add('plasticboy/vim-markdown')
 
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -302,7 +302,6 @@ endif
 " let g:airline_powerline_fonts = 1
 "
 " if !exists(''
-" NeoBundle 'scrooloose/nerdtree'
 " {{
 let NERDTreeMinimalUI = 1
 " }}
