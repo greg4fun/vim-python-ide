@@ -37,7 +37,7 @@ call dein#add( 'mhinz/vim-startify')
 call dein#add( 'ervandew/supertab')
 call dein#add( 'xolox/vim-notes')
 call dein#add( 'xolox/vim-misc')
-call dein#add( 'python.vim--Vasiliev' )
+" call dein#add( 'python.vim--Vasiliev' )
 call dein#add( 'blackboard.vim')
 call dein#add( 'klen/python-mode')
 call dein#add( 'sotte/presenting.vim' )
@@ -49,6 +49,8 @@ call dein#add('flazz/vim-colorschemes')
 call dein#add('bling/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
 
+" TEST
+" --------------
 
 
 
@@ -118,7 +120,7 @@ else
     colorscheme wombat
     set background=dark
     " Cursor preferences
-    set guifont=Anonymous\ Pro\ 8
+    set guifont=Anonymous\ Pro\ 9
     " set guicursor=n-v-c:block-Cursor
     " set guicursor+=o:hor50-Cursor
     " set guicursor+=i-r:ver15-iCursor
@@ -565,5 +567,6 @@ set tags=tags
 set showbreak=↪
 set fillchars=vert:│,fold:─
 set listchars=tab:\⋮\ ,extends:⟫,precedes:⟪,nbsp:.,trail:·
-
+let g:pymode_rope_lookup_project = 0
+let g:pymode_rope = 0
 
