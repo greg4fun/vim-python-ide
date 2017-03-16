@@ -33,12 +33,15 @@ call dein#add( 'Conque-Shell')
 call dein#add( 'davidhalter/jedi-vim')
 call dein#add( 'nathanaelkane/vim-indent-guides')
 call dein#add( 'mhinz/vim-startify')
+call dein#add( 'bogado/file-line')
 " call dein#add( 'dbsr/vimpy')
 call dein#add( 'ervandew/supertab')
 call dein#add( 'xolox/vim-notes')
 call dein#add( 'xolox/vim-misc')
 " call dein#add( 'python.vim--Vasiliev' )
 call dein#add( 'blackboard.vim')
+call dein#add( 'blackboard.vim')
+call dein#add( 'python-rope/ropevim')
 call dein#add( 'klen/python-mode')
 call dein#add( 'sotte/presenting.vim' )
 call dein#add( 'garybernhardt/pycomplexity', {'rtp': 'pycomplexity.vim/'})
@@ -567,6 +570,6 @@ set tags=tags
 set showbreak=↪
 set fillchars=vert:│,fold:─
 set listchars=tab:\⋮\ ,extends:⟫,precedes:⟪,nbsp:.,trail:·
-let g:pymode_rope_lookup_project = 0
-let g:pymode_rope = 0
+let g:pymode_rope_lookup_project = 1
+let g:pymode_rope = 1
 
