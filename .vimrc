@@ -7,7 +7,10 @@ set encoding=utf-8
 " Let dein manage dein
 " Required:
 call dein#add('dein.vim')
-
+" call dein#add( 'vim-pandoc')
+" call dein#add('mt3/vim-pantondoc')
+" call dein#add( 'vim-pandoc/vim-pandoc-syntax')
+"call dein#add( 'vim-pandoc/vim-pandoc/blob/master/plugin/pandoc.vim')
 " Add or remove your plugins here:
 call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 call dein#add( 'Shougo/vimproc')
@@ -570,6 +573,6 @@ set tags=tags
 set showbreak=↪
 set fillchars=vert:│,fold:─
 set listchars=tab:\⋮\ ,extends:⟫,precedes:⟪,nbsp:.,trail:·
-let g:pymode_rope_lookup_project = 1
+let g:pymode_rope_lookup_project = 0
 let g:pymode_rope = 1
-
+let NERDTreeIgnore = ['\.pyc$']
