@@ -7,6 +7,6 @@ git clone https://grzegorz_stencel@bitbucket.org/grzegorz_stencel/vim-python-ide
 cp $(eval echo ~$USER)/.vim/cache/vim-python-ide/.vimrc $(eval echo ~$USER)
 vim -c "call dein#install()"
 git clone https://github.com/powerline/fonts.git
-wget https://github.com/greg4fun/vim-startup2/raw/master/fonts/Anonymous%20Pro.ttf -O ~/.fonts/Anonymous\ Pro.ttf
-wget https://github.com/greg4fun/vim-startup2/raw/master/fonts/Inconsolata.otf -O ~/.fonts/Inconsolata.otf
+wget https://github.com/greg4fun/vim-startup2/raw/master/fonts/Anonymous%20Pro.ttf -O ~/.fonts
+wget https://github.com/greg4fun/vim-startup2/raw/master/fonts/Inconsolata.otf -O ~/.fonts
 cd fonts && install.sh
