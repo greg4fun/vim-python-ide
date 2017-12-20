@@ -44,7 +44,7 @@ call dein#add( 'xolox/vim-misc')
 " call dein#add( 'python.vim--Vasiliev' )
 call dein#add( 'blackboard.vim')
 call dein#add( 'blackboard.vim')
-call dein#add( 'python-rope/ropevim')
+" call dein#add( 'python-rope/ropevim')
 call dein#add( 'klen/python-mode')
 call dein#add( 'sotte/presenting.vim' )
 call dein#add( 'garybernhardt/pycomplexity', {'rtp': 'pycomplexity.vim/'})
@@ -54,7 +54,14 @@ call dein#add('rafi/awesome-vim-colorschemes')
 call dein#add('flazz/vim-colorschemes')
 call dein#add('bling/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
-
+" call dein#add('xolox/session')
+" call dein#add('xolox/vim-session')
+call dein#add('itchyny/vim-gitbranch')
+call dein#add('airblade/vim-gitgutter')
+call dein#add('christoomey/vim-tmux-navigator')
+call dein#add('vim-scripts/DrawIt')
+" call dein#add('Shougo/vimfiler.vim') " A powerful file explorer implemented in Vim script
+"
 " TEST
 " --------------
 
@@ -67,6 +74,7 @@ if v:progname =~? "evim"
 endif
 let mapleader = ","
 
+set relativenumber
 set nocompatible               " be iMproved
 filetype off                   " required!
 let g:syntastic_phpcs_disable=1
@@ -118,7 +126,7 @@ let g:airline_right_sep = '◀'
 if ! has("gui_running")
     set t_Co=256
     colorscheme blackboard
-    set guifont=monospace\ 14
+    set guifont=monospace\ 15
     set background=dark
 else
     " disable menu/ect
@@ -126,14 +134,15 @@ else
     colorscheme wombat
     set background=dark
     " Cursor preferences
-    set guifont=Anonymous\ Pro\ 9
+    " set guifont=Anonymous\ Pro\ 12
+    set guifont=Monospace\ 9
     " set guicursor=n-v-c:block-Cursor
     " set guicursor+=o:hor50-Cursor
     " set guicursor+=i-r:ver15-iCursor
     " set guicursor+=a:blinkwait700-blinkon700-blinkoff700
 endif
 
-set tags=/opt/iwapps/test/tags
+set tags=/home/greg/projects/risk-horizon
 let $VARPATH=expand('/home/greg/.vim/cache')
 set directory=$VARPATH/swap//,$VARPATH,~/tmp,/var/tmp,/tmp
 set undodir=$VARPATH/undo//,$VARPATH,~/tmp,/var/tmp,/tmp
@@ -574,5 +583,6 @@ set showbreak=↪
 set fillchars=vert:│,fold:─
 set listchars=tab:\⋮\ ,extends:⟫,precedes:⟪,nbsp:.,trail:·
 let g:pymode_rope_lookup_project = 0
-let g:pymode_rope = 1
+let g:pymode_rope = 0
 let NERDTreeIgnore = ['\.pyc$']
+map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>. 
