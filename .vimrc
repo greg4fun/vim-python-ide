@@ -134,8 +134,8 @@ else
     colorscheme wombat
     set background=dark
     " Cursor preferences
-    " set guifont=Anonymous\ Pro\ 12
-    set guifont=Monospace\ 9
+    set guifont=Monaco\ for\ Powerline\ 10
+    " set guifont=Monospace\ 10
     " set guicursor=n-v-c:block-Cursor
     " set guicursor+=o:hor50-Cursor
     " set guicursor+=i-r:ver15-iCursor
@@ -585,4 +585,3 @@ set listchars=tab:\⋮\ ,extends:⟫,precedes:⟪,nbsp:.,trail:·
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope = 0
 let NERDTreeIgnore = ['\.pyc$']
-map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>. 
