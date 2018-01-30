@@ -58,8 +58,10 @@ call dein#add('vim-airline/vim-airline-themes')
 " call dein#add('xolox/vim-session')
 call dein#add('itchyny/vim-gitbranch')
 call dein#add('airblade/vim-gitgutter')
+
 call dein#add('christoomey/vim-tmux-navigator')
-call dein#add('vim-scripts/DrawIt')
+call dein#add('ekalinin/Dockerfile.vim', {'on_ft': ['Dockerfile','docker-compose']})
+
 " call dein#add('Shougo/vimfiler.vim') " A powerful file explorer implemented in Vim script
 "
 " TEST
@@ -126,7 +128,7 @@ let g:airline_right_sep = '◀'
 if ! has("gui_running")
     set t_Co=256
     colorscheme blackboard
-    set guifont=monospace\ 15
+    set guifont=monospace\ 14
     set background=dark
 else
     " disable menu/ect
@@ -134,15 +136,15 @@ else
     colorscheme wombat
     set background=dark
     " Cursor preferences
-    set guifont=Monaco\ for\ Powerline\ 10
-    " set guifont=Monospace\ 10
+    set guifont=Anonymous\ Pro\ for\ Powerline\ 11
+    " set guifont=Monospace\ 12
     " set guicursor=n-v-c:block-Cursor
     " set guicursor+=o:hor50-Cursor
     " set guicursor+=i-r:ver15-iCursor
     " set guicursor+=a:blinkwait700-blinkon700-blinkoff700
 endif
 
-set tags=/home/greg/projects/risk-horizon
+set tags=/opt/iwapps/test/tags
 let $VARPATH=expand('/home/greg/.vim/cache')
 set directory=$VARPATH/swap//,$VARPATH,~/tmp,/var/tmp,/tmp
 set undodir=$VARPATH/undo//,$VARPATH,~/tmp,/var/tmp,/tmp
@@ -583,5 +585,7 @@ set showbreak=↪
 set fillchars=vert:│,fold:─
 set listchars=tab:\⋮\ ,extends:⟫,precedes:⟪,nbsp:.,trail:·
 let g:pymode_rope_lookup_project = 0
-let g:pymode_rope = 0
+let g:pymode_rope = 1
 let NERDTreeIgnore = ['\.pyc$']
+" yaml files -docker compose
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
