@@ -1,8 +1,8 @@
 if &compatible
   set nocompatible               " Be iMproved
 endif
-set runtimepath+=/home/greg/.vim/dein.vim
-call dein#begin('/home/greg/.vim')
+set runtimepath+=$HOME.'/.vim/dein.vim'
+call dein#begin($HOME.'/.vim')
 set encoding=utf-8
 " Let dein manage dein
 " Required:
@@ -58,6 +58,7 @@ call dein#add('vim-airline/vim-airline-themes')
 " call dein#add('xolox/vim-session')
 call dein#add('itchyny/vim-gitbranch')
 call dein#add('airblade/vim-gitgutter')
+call dein#add('tpope/vim-fugitive')
 
 call dein#add('christoomey/vim-tmux-navigator')
 call dein#add('ekalinin/Dockerfile.vim', {'on_ft': ['Dockerfile','docker-compose']})
@@ -145,7 +146,7 @@ else
 endif
 
 set tags=/opt/iwapps/test/tags
-let $VARPATH=expand('/home/greg/.vim/cache')
+let $VARPATH=expand($HOME.'/.vim/cache')
 set directory=$VARPATH/swap//,$VARPATH,~/tmp,/var/tmp,/tmp
 set undodir=$VARPATH/undo//,$VARPATH,~/tmp,/var/tmp,/tmp
 set backupdir=$VARPATH/backup/,$VARPATH,~/tmp,/var/tmp,/tmp
