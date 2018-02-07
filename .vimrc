@@ -522,6 +522,9 @@ nmap <leader>D :bufdo bd<CR>                " Close all buffers
 nnoremap <leader><leader> <C-^>             " Switch between last two buffers
 " }}
 
+"close buffer without closing window
+map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>. 
+
 " ---------------
 " move lines
 " --------------- {{
