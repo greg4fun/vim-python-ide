@@ -1,8 +1,8 @@
 if &compatible
   set nocompatible               " Be iMproved
 endif
-set runtimepath+=$HOME.'/.vim/dein.vim'
-call dein#begin($HOME.'/.vim')
+set runtimepath+=/home/greg/.vim/dein.vim
+call dein#begin('/home/greg/.vim')
 set encoding=utf-8
 " Let dein manage dein
 " Required:
@@ -58,7 +58,6 @@ call dein#add('vim-airline/vim-airline-themes')
 " call dein#add('xolox/vim-session')
 call dein#add('itchyny/vim-gitbranch')
 call dein#add('airblade/vim-gitgutter')
-call dein#add('tpope/vim-fugitive')
 
 call dein#add('christoomey/vim-tmux-navigator')
 call dein#add('ekalinin/Dockerfile.vim', {'on_ft': ['Dockerfile','docker-compose']})
@@ -146,7 +145,7 @@ else
 endif
 
 set tags=/opt/iwapps/test/tags
-let $VARPATH=expand($HOME.'/.vim/cache')
+let $VARPATH=expand('/home/greg/.vim/cache')
 set directory=$VARPATH/swap//,$VARPATH,~/tmp,/var/tmp,/tmp
 set undodir=$VARPATH/undo//,$VARPATH,~/tmp,/var/tmp,/tmp
 set backupdir=$VARPATH/backup/,$VARPATH,~/tmp,/var/tmp,/tmp
@@ -448,9 +447,9 @@ nmap <Leader>kk :set background=dark<CR>
 nmap <Leader>jj :colorscheme solarized<CR>
 nmap <Leader>hh :colorscheme blackboard<CR>
 
-    
 nmap <Leader>sit :NERDTreeFind
 " " }}
+map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>. 
 
 " git/fugitive
 nmap <Leader>gs :Gstatus<CR>
@@ -522,9 +521,6 @@ nmap <leader>D :bufdo bd<CR>                " Close all buffers
 nnoremap <leader><leader> <C-^>             " Switch between last two buffers
 " }}
 
-"close buffer without closing window
-map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>. 
-
 " ---------------
 " move lines
 " --------------- {{
@@ -589,7 +585,7 @@ set showbreak=↪
 set fillchars=vert:│,fold:─
 set listchars=tab:\⋮\ ,extends:⟫,precedes:⟪,nbsp:.,trail:·
 let g:pymode_rope_lookup_project = 0
-let g:pymode_rope = 1
+let g:pymode_rope = 0
 let NERDTreeIgnore = ['\.pyc$']
 " yaml files -docker compose
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
