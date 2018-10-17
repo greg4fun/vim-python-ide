@@ -145,7 +145,9 @@ else
     " set guicursor+=a:blinkwait700-blinkon700-blinkoff700
 endif
 
-set tags=/opt/iwapps/test/tags
+" set tags=tags
+set tags=./tags,tags;$HOME
+
 let $VARPATH=expand('/home/greg/.vim/cache')
 set directory=$VARPATH/swap//,$VARPATH,~/tmp,/var/tmp,/tmp
 set undodir=$VARPATH/undo//,$VARPATH,~/tmp,/var/tmp,/tmp
@@ -577,7 +579,7 @@ set undodir=$HOME/.vim/undo
 
 set undolevels=2000
 set undoreload=20000
-set tags=tags
+" set tags=tags
 
 
 " TEST
