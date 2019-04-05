@@ -1,8 +1,8 @@
 if &compatible
   set nocompatible               " Be iMproved
 endif
-set runtimepath+=/home/greg/.vim/dein.vim
-call dein#begin('/home/greg/.vim')
+set runtimepath+=homedir/.vim/dein.vim
+call dein#begin('homedir/.vim')
 set encoding=utf-8
 " Let dein manage dein
 " Required:
@@ -148,7 +148,7 @@ endif
 " set tags=tags
 set tags=./tags,tags;$HOME
 
-let $VARPATH=expand('/home/greg/.vim/cache')
+let $VARPATH=expand('homedir/.vim/cache')
 set directory=$VARPATH/swap//,$VARPATH,~/tmp,/var/tmp,/tmp
 set undodir=$VARPATH/undo//,$VARPATH,~/tmp,/var/tmp,/tmp
 set backupdir=$VARPATH/backup/,$VARPATH,~/tmp,/var/tmp,/tmp
