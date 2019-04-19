@@ -91,7 +91,7 @@ let g:syntastic_quiet_messages = {'level': 'warnings'}
 let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_flake8_args='--ignore=E128,E501,E127'
 set laststatus=2 " Always show status line
-
+set incsearch
 " Airline old
 " let g:airline_theme             = 'powerlineish'
 " let g:airline_enable_branch     = 1
